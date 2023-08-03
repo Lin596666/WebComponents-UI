@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components</title>
+    <!-- 引入 Lit 相关库 -->
+    <script src="https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js"></script>
+</head>
+
+<body>
+    <!-- 使用 SButton 组件 -->
+    <s-button>Add</s-button>
+
+    <script type="module">
+        // 导入 Lit 相关库
+        import { LitElement, html, css } from 'lit';
+
+        // 创建 SButton 组件
+        class SButton extends LitElement {
+            static styles = css`
+                :host {
+                    --button-bg-color: #007bff;
+                    --button-text-color: #fff;
+                    --button-border: none;
+                }
+
+                button {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: var(--button-text-color);
+                    background-color: var(--button-bg-color);
+                    border: var(--button-border);
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                    background-color: #0062cc;
+                }
+
+                button:active {
+                    background-color: #005cbf;
+                }
+
+                .counter {
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: #999;
+                }
+            `;
+
+            // 定义组件的属性和默认值
+            static properties = {
+                counter: { type: Number },
+            };
+
+            constructor() {
+                super();
+                this.counter = 0;
+            }
+
+            // 渲染组件的模板
+            render() {
+                return html`
+                    <button @click=${this.incrementCounter}>
+                        <slot></slot>
+                    </button>
+                    <div class="counter">Counter: ${this.counter}</div>
+                `;
+            }
+
+            // 增加计数器值并更新显示
+            incrementCounter() {
+                this.counter++;
+                this.requestUpdate();
+            }
+        }
+
+        // 定义 s-button 元素
+        customElements.define('s-button', SButton);
+    </script>
+</body>
+
+</html>

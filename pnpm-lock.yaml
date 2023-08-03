@@ -1,0 +1,65 @@
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  demo:
+    dependencies:
+      lit:
+        specifier: ^2.7.6
+        version: registry.npmmirror.com/lit@2.7.6
+
+packages:
+
+  registry.npmmirror.com/@lit-labs/ssr-dom-shim@1.1.1:
+    resolution: {integrity: sha512-kXOeFbfCm4fFf2A3WwVEeQj55tMZa8c8/f9AKHMobQMkzNUfUj+antR3fRPaZJawsa1aZiP/Da3ndpZrwEe4rQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lit-labs/ssr-dom-shim/-/ssr-dom-shim-1.1.1.tgz}
+    name: '@lit-labs/ssr-dom-shim'
+    version: 1.1.1
+    dev: false
+
+  registry.npmmirror.com/@lit/reactive-element@1.6.2:
+    resolution: {integrity: sha512-rDfl+QnCYjuIGf5xI2sVJWdYIi56CTCwWa+nidKYX6oIuBYwUbT/vX4qbUDlHiZKJ/3FRNQ/tWJui44p6/stSA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lit/reactive-element/-/reactive-element-1.6.2.tgz}
+    name: '@lit/reactive-element'
+    version: 1.6.2
+    dependencies:
+      '@lit-labs/ssr-dom-shim': registry.npmmirror.com/@lit-labs/ssr-dom-shim@1.1.1
+    dev: false
+
+  registry.npmmirror.com/@types/trusted-types@2.0.3:
+    resolution: {integrity: sha512-NfQ4gyz38SL8sDNrSixxU2Os1a5xcdFxipAFxYEuLUlvU2uDwS4NUpsImcf1//SlWItCVMMLiylsxbmNMToV/g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/trusted-types/-/trusted-types-2.0.3.tgz}
+    name: '@types/trusted-types'
+    version: 2.0.3
+    dev: false
+
+  registry.npmmirror.com/lit-element@3.3.2:
+    resolution: {integrity: sha512-xXAeVWKGr4/njq0rGC9dethMnYCq5hpKYrgQZYTzawt9YQhMiXfD+T1RgrdY3NamOxwq2aXlb0vOI6e29CKgVQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lit-element/-/lit-element-3.3.2.tgz}
+    name: lit-element
+    version: 3.3.2
+    dependencies:
+      '@lit-labs/ssr-dom-shim': registry.npmmirror.com/@lit-labs/ssr-dom-shim@1.1.1
+      '@lit/reactive-element': registry.npmmirror.com/@lit/reactive-element@1.6.2
+      lit-html: registry.npmmirror.com/lit-html@2.7.5
+    dev: false
+
+  registry.npmmirror.com/lit-html@2.7.5:
+    resolution: {integrity: sha512-YqUzpisJodwKIlbMFCtyrp58oLloKGnnPLMJ1t23cbfIJjg/H9pvLWK4XS69YeubK5HUs1UE4ys9w5dP1zg6IA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lit-html/-/lit-html-2.7.5.tgz}
+    name: lit-html
+    version: 2.7.5
+    dependencies:
+      '@types/trusted-types': registry.npmmirror.com/@types/trusted-types@2.0.3
+    dev: false
+
+  registry.npmmirror.com/lit@2.7.6:
+    resolution: {integrity: sha512-1amFHA7t4VaaDe+vdQejSVBklwtH9svGoG6/dZi9JhxtJBBlqY5D1RV7iLUYY0trCqQc4NfhYYZilZiVHt7Hxg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lit/-/lit-2.7.6.tgz}
+    name: lit
+    version: 2.7.6
+    dependencies:
+      '@lit/reactive-element': registry.npmmirror.com/@lit/reactive-element@1.6.2
+      lit-element: registry.npmmirror.com/lit-element@3.3.2
+      lit-html: registry.npmmirror.com/lit-html@2.7.5
+    dev: false
